@@ -63,6 +63,7 @@ public class SQLiteDemo {
                 update(myCommand[1], Float.parseFloat(myCommand[2]));
             } else
             if (Objects.equals(myCommand[0], "/productsinrange")){
+                //Test update
                 try (Statement stmt = connection.createStatement();
                      ResultSet rs = stmt.executeQuery("SELECT * FROM " + TABLE_NAME + " where cost > "+myCommand[1]+" AND cost < "+myCommand[2]+";")) {
                     while (rs.next())
