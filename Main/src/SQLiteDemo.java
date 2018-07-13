@@ -63,8 +63,16 @@ public class SQLiteDemo {
                 update(myCommand[1], Float.parseFloat(myCommand[2]));
             } else
             if (Objects.equals(myCommand[0], "/productsinrange")){
-                System.out.println("Я не смог нагуглить как это делается, between выдает ошибку, в методичке ничего про это нет." +
-                        "Зачем давать задание если в методичке нет ключа к его решению???");
+                try (Statement stmt = connection.createStatement();
+                     ResultSet rs = stmt.executeQuery("SELECT * FROM " + TABLE_NAME + " where cost > "+myCommand[1]+" AND cost < "+myCommand[2]+";")) {
+                    while (rs.next())
+                        System.out.println(rs.getInt("id") + "\t" +
+                                rs.getInt("prodid")+ "\t" +
+                                rs.getString("title")+ "\t" +
+                                rs.getFloat("cost"));
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
             } else
             if (Objects.equals(myCommand[0], "/bye")){
                 break;
