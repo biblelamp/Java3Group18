@@ -25,7 +25,7 @@ class J3HW33 {
                 file.read(chars);
                 String str = new String(chars);
                 System.out.println(str);
-                //break;// You can remove to display the entire file;
+                break;// You can remove to display the entire file;
             }
             if (j == -1) return;
         } catch (IOException ex) {
