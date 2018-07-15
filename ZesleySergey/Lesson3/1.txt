@@ -1,0 +1,1 @@
+A common fear is that a simple, single-threaded network client without timeout support will balloon into a complex multithreaded nightmare, with separate threads needed to detect network timeouts, and some form of notification process at work between the blocked thread and the main application.
