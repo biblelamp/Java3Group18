@@ -1,6 +1,8 @@
 import java.io.*;
 import java.lang.reflect.Array;
 import java.util.Arrays;
+import java.util.InputMismatchException;
+import java.util.Scanner;
 
 /**
  * Java 3. Lesson 3.
@@ -27,6 +29,7 @@ public class J3Lesson3 {
     public static void main(String[] args) {
         byteReadFromFile();
         addFileOne();
+        pageFilePrint();
     }
 
     public static void byteReadFromFile() {
@@ -103,5 +106,63 @@ public class J3Lesson3 {
 
         }
         else {System.out.println("file NOT exists");}
+    }
+
+    public static void pageFilePrint() {
+
+        Scanner scanner = new Scanner(System.in);
+
+        int page = 1800;
+        int pageNumber = 5000;
+        int i = 1;
+        char[] charBuf = new char[page];
+        int ofcet = 0;
+        File file = new File("src\\10mb.txt");
+        long sizeFile =0;
+        boolean continueInput = true; // ожидание ввода числа
+
+        StringBuilder str = new StringBuilder();
+
+        BufferedReader br = null;
+
+        try{
+            br = new BufferedReader(new FileReader(file));
+            sizeFile=file.length();
+            System.out.println("в файле "+(sizeFile/page)+" страниц");
+
+            Scanner input = new Scanner(System.in);
+
+            do {
+                try{
+                    System.out.print("Enter an integer: ");
+                    pageNumber = input.nextInt();
+
+                    continueInput = false;
+                }
+                catch (InputMismatchException ex) {
+                    System.out.println("Try again. (" +
+                            "Incorrect input: an integer is required)");
+                }
+            }
+            while (continueInput);
+
+            while (br.read(charBuf,0,page)!=1)
+            {
+                br.read(charBuf,0,page);
+                str.append(charBuf);
+
+                if (i==pageNumber) {
+                    System.out.println(str);
+                    break;
+                }
+                ++i;
+
+            }
+
+            br.close();
+        }catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 }
