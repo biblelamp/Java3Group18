@@ -1,7 +1,0 @@
-"abcdefghjklmnopqrstuvwxyz
-"1234567890
-"!@#$%^&*()|\/
-"abcdefghjklmnopqrstuvwxyz
-"1234567890
-"!@#$%^&*()|\/
-#5
