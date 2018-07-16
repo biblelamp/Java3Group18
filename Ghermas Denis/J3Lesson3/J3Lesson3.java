@@ -24,32 +24,25 @@ public class J3Lesson3 {
 
     static File file[] = new File[5] ;
 
-    static byte[] br = new byte[50];
-
     public static void main(String[] args) {
         byteReadFromFile();
         addFileOne();
     }
 
     public static void byteReadFromFile() {
+
         if (file0.exists()==true) {
             System.out.println("file exists");
 
+            try (FileInputStream in = new FileInputStream(file0);){
 
-            FileInputStream in = null;
-            try {
-                in = new FileInputStream(file0.getAbsoluteFile());
+              //  System.out.printf("File size: %d bytes \n", in.available());
+                byte[] br = new byte[in.available()];
                 in.read(br);
                 System.out.println(Arrays.toString(br));
                 in.close();
             } catch (Exception e) {
                 e.printStackTrace();
-            } finally {
-                try {
-                    in.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
             }
         }
         else {System.out.println("file NOT exists");}
@@ -57,8 +50,6 @@ public class J3Lesson3 {
 
     public static void addFileOne() {
         boolean Exists = true;
-
-        byte[] fileBufer  =  new byte[120];
 
         FileOutputStream out = null;
         FileInputStream in = null;
@@ -84,7 +75,8 @@ public class J3Lesson3 {
 
             try {
                 for (int i = 0; i < file.length; i++) {
-                    in = new FileInputStream(file[i].getAbsoluteFile());
+                    in = new FileInputStream(file[i]);
+                    byte[] fileBufer  =  new byte[in.available()];
                     in.read(fileBufer);
                     in.close();
                     out = new FileOutputStream(fileOut.getAbsoluteFile(),true);
