@@ -1,0 +1,1 @@
+Blocking operations: Read or write stalls, operation waits until I/O device is ready

@@ -1,0 +1,1 @@
+When working with network connections, or any type of I/O device, there are two classifications of operations:

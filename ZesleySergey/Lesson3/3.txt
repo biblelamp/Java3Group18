@@ -1,0 +1,1 @@
+Dealing with network timeouts need not be a difficult task, and in many cases you can completely avoid writing code for additional threads.
