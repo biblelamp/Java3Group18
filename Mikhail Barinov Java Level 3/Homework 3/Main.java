@@ -7,7 +7,6 @@
  * @version Jul 16, 2018
  */
 
-package java_level_3.homework_03;
 import java.io.*;
 import java.util.Arrays;
 
