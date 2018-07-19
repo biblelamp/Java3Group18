@@ -1,3 +1,13 @@
+/**
+ * Java 3 Home Work 4
+ *
+ * @author Andrew Shevelev
+ * @version jul 15, 2018
+ * <p>
+ * https://github.com/ShevelevAndrew
+ */
+
+
 class WaitNotifyClass {
     private final Object monitor = new Object();
     private char currentLetter = 'A';

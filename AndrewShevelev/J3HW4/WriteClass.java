@@ -1,3 +1,12 @@
+/**
+ * Java 3 Home Work 4
+ *
+ * @author Andrew Shevelev
+ * @version jul 18, 2018
+ * <p>
+ * https://github.com/ShevelevAndrew
+ */
+
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.text.SimpleDateFormat;
