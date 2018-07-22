@@ -1,3 +1,11 @@
+/**
+ * Java 3. Home Work 5.
+ *
+ * @author Albert Khayrutdinov
+ * @version dated Jul 22, 2018
+ * @link https://github.com/bertranus
+ */
+ 
 import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.List;
