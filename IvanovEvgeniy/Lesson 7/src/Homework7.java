@@ -1,3 +1,11 @@
+/**
+ * Java. Level 3. Homework 7.
+ *
+ * @author Stalker1290
+ * @version dated Jul 30,2018
+ * @link https://github.com/Stalker1290
+ */
+
 import java.lang.annotation.*;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
