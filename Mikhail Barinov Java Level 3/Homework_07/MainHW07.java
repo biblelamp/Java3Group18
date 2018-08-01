@@ -1,7 +1,5 @@
 package Homework_07;
 
-import java.lang.reflect.Method;
-
 /**
  * Java. Level 3. Homework 7
  * 1. Создать класс, который может выполнять «тесты»,
@@ -26,9 +24,6 @@ import java.lang.reflect.Method;
 public class MainHW07 {
     public static void main(String[] args){
         TestedClass c = new TestedClass();
-        Tester t = new Tester();
-        try {
-            t.start(c.getClass());
-        }catch (Exception e) {}
+        Tester.start(c.getClass());
     }
 }
