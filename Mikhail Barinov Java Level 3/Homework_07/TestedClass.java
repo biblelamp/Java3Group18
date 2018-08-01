@@ -4,7 +4,7 @@ import java.lang.reflect.Method;
 
 public class TestedClass {
     @BeforeSuite
-    public void myHelloMethod(){
+    void myHelloMethod(){
         System.out.println("Hello!");
     }
     @Test

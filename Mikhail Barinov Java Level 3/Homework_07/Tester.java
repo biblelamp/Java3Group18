@@ -3,7 +3,7 @@ package Homework_07;
 import java.lang.reflect.Method;
 
 public class Tester {
-    public static void start(Class c) throws RuntimeException {
+    public static void start(Class c) {
         Method[] methods = c.getDeclaredMethods();
         boolean isFirst = true;
         try {
@@ -14,8 +14,7 @@ public class Tester {
                     o.invoke(myInstance);
                     isFirst=false;
                 } else if((o.getAnnotation(BeforeSuite.class) != null)&&(isFirst==false)){
-                    System.out.println("Only one @BeforeSuite method allowed!");
-                    throw new RuntimeException();
+                    throw new RuntimeException("Only one @BeforeSuite method allowed!");
                 }
             }
             for (Method o : methods) {
@@ -85,11 +84,11 @@ public class Tester {
                     o.invoke(myInstance);
                     isFirst=false;
                 } else if((o.getAnnotation(AfterSuite.class) != null)&&(isFirst==false)){
-                    System.out.println("Only one @AfterSuite method allowed!");
-                    throw new RuntimeException();
+                    throw new RuntimeException("Only one @AfterSuite method allowed!");
                 }
             }
         }catch (Exception e) {
+            System.out.println(e);
         }
     }
 }
